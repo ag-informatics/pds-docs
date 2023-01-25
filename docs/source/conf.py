@@ -9,7 +9,7 @@
 project = 'Plant Data Service'
 copyright = '2023, axilab'
 author = 'axilab'
-release = '1.0'
+release = '1'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
