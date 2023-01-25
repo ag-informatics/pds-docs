@@ -3,12 +3,13 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Plant Data Service's documentation!
+Welcome to the Plant Data Service's documentation!
 ==============================================
+The Plant Data Service is an open-source plant data API. It was inspired by the growing need for information sharing within agriculture and was created to meet the needs of the National Cover Crop Councils.
 .. note::
 
-   This project is under active development.
-
+   This project is under active development. You can demo it [here](http://142.93.60.97/)
+ 
 Contents
 --------
 
