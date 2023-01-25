@@ -1,0 +1,11 @@
+# Database configuration
+# Please input your MongoDB information here
+# The script will automatically create and populate a database named "pdsProto2" and the necessary collections
+# Leave 'username' and 'password' blank if you did not set them up
+host: 
+port: 
+# Your admin user MUST be a super admin (e.g. have the [root] role. See README.md)
+# Passwords cannot contain : / ? # [ ] @ (because I did not put percent encoding into this yet)
+username: 
+password: 
+# For data import settings, see /famport.

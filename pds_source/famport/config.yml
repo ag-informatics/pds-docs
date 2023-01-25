@@ -1,0 +1,24 @@
+## Database configuration
+# Please input your MongoDB information here
+# The script will automatically create and populate a database.
+# Leave 'username' and 'password' blank if you did not set them up.
+host: 
+port: 
+# Your admin user MUST be a super admin (e.g. have the [root] role)
+# Passwords cannot contain : / ? # [ ] @ 
+username: 
+password: 
+
+# These are data owners as described in the static_models folder.
+# Example format:
+# dataowners:
+# - Ownername:
+#   - States
+#     - insert state here
+#     - insert another state here
+#   - Website: https://somewebsitehere.com/
+#   - dataDictionary: datadictionaryfile.csv
+#   - Zones:                                                 <----- Zones are optional, but keep this all in order.
+#     - {zone_number: 1, importfile: somefilehere.csv}
+# Ordering of these attributes does not matter.*
+dataowners:
