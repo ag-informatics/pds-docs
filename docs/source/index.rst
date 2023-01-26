@@ -9,14 +9,7 @@ Home
 
 The Plant Data Service is an open-source plant data API. It was inspired by the growing need for information sharing within agriculture and was created to meet the needs of the National Cover Crop Councils.
 .. note::
-
    This project is under active development.
 
 You can demo the PDS `here <http://142.93.60.97/>`_ .
  
-Contents
---------
-
-.. toctree::
-   architecture
-   usage
