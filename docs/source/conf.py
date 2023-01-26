@@ -26,7 +26,7 @@ exclude_patterns = []
 
 html_theme = 'sphinx_material'
 html_theme_options = {
-    'nav_title': 'Contents',
+    'nav_title': 'The Plant Data Service',
     'color_primary': 'green',
     'color_accent': 'light-green'
 }
