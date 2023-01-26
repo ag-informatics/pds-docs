@@ -25,4 +25,9 @@ exclude_patterns = []
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = 'sphinx_material'
+html_theme_options = {
+    'nav_title': 'Contents',
+    'color_primary': '#808000',
+    'color_accent': '#adad00'
+}
 html_static_path = ['_static']
