@@ -13,4 +13,9 @@ The Plant Data Service is an open-source plant data API. It was inspired by the 
    This project is under active development.
 
 You can demo the PDS `here <http://142.93.60.97/>`_ .
+
+
+.. toctree::
+
+   architecture
  
