@@ -6,10 +6,11 @@ High-Level Architecture
 =================
 #################
 Data Structuring and Database Management System Selection
-#################
+=================
 The Plant Data Service uses MongoDB for data storage.
-
-#### Why we chose to use a NoSQL database
+*****************
+Why we chose to use a NoSQL database
+=================
 It was determined earlier on in the development and design process that NoSQL was the way to go for storing data used by the PDS. Why?
 1. NoSQL databases are highly flexible, and it's easy to link data together in a NoSQL database. For our purposes, NoSQL is a better option for representing plant data in a variety of contexts. This schemaless setup is also important for a system that uses data from many owners that all structure their data slightly differently.
 2. They're easier to manage than a SQL database. While SQL databases work well for rigid data structures or large development teams, the level of management they require is not ideal for the PDS project.
