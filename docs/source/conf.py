@@ -27,7 +27,7 @@ exclude_patterns = []
 html_theme = 'sphinx_material'
 html_theme_options = {
     'nav_title': 'Contents',
-    'color_primary': '#808000',
-    'color_accent': '#adad00'
+    'color_primary': 'green',
+    'color_accent': 'light-green'
 }
 html_static_path = ['_static']
