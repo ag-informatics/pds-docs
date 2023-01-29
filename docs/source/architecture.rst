@@ -5,13 +5,13 @@ Architecture Overview
 High-Level Architecture
 =================
 
-#################
-Data Structuring and Database Management System Selection
-=================
 
+Data Structuring and Database Management System Selection
 *****************
+
+
 Why we chose to use a NoSQL database
-=================
+-----------------
 
 It was determined earlier on in the development and design process that NoSQL was the way to go for storing data used by the PDS. Why?
 
