@@ -4,7 +4,10 @@ Architecture Overview
 =================
 High-Level Architecture
 =================
-
+.. figure:: images/structure.png
+    :scale: 50%
+    
+    Figure: The high-level overview of the architecture of the Plant Data Service.
 
 Data Structuring and Database Management System Selection
 *****************
