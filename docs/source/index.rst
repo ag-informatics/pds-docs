@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-About
+PDS Documentation
 ==============================================
 **Welcome to the Plant Data Service Documentation!**
 
@@ -38,7 +38,7 @@ Deployment on a Remote Server
     * Get the packages. Run ``apt-get update`` to update your packages list and then ``sudo apt-get install -y mongodb-org``
     * Start MongoDB using ``sudo systemctl start mongod``.
     * It's time to set up a secure login for Mongo. Access the Mongo shell by running ``mongosh``. Use the admin database by running ``use admin`` and then run the following command, replacing the placeholders. **Your password cannot contain : / ? # [ ] @**::
-      
+
         db.createUser(
         {
         user: "yourusername", 
@@ -92,6 +92,7 @@ Flask is suited for basically however you want to organize your data, but genera
 
 Modules and tools included with FastAPI
 The FastAPI has a toolbox of different modules and standards that you can use together for a robust application. Some of these important features include:
+
 * `SwaggerUI <'https://swagger.io/tools/swagger-ui/'>`_: SwaggerUI is used to create beautiful and highly functional documentation of functions and defined object schemas automatically. 
 * `Pydantic <'https://docs.pydantic.dev/'>`_: Pydantic is used for object relational mapping and data validation. It can be used to create schemas that define objects used in API responses and can be used in conjunction with SwaggerUI for extremely in-detail auto documentation.
 * `OpenAPI <'https://www.openapis.org'>`_: OpenAPI is a set of standards used for easy interfacing with RESTful APIs. It used to be a part of Swagger before becoming its own project.
@@ -119,6 +120,28 @@ Why we chose MongoDB as our Database Management System (DBMS)
 
 A couple DBMSs were considered during the early phases of development. One promising DBMS was `OrientDB <https://orientdb.org>`_ , but Orient proved to be outdated for current versions of its Python tool and its related dependencies.
 We settled with `MongoDB <https://mongodb.com>`_ since it is widely used (and more reliable than Orient). As a NoSQL DBMS, MongoDB stores collections of "documents" with non-rigid schemas. The flexibility of data storage allows data to be linked together.
+
+
+Famport: What it is, Structure, and Code
+==============================================
+
+Famport (**F**ast**A**PI **M**ongoDB Im**port**er) is a component of the data import and validation process of the Plant Data Service. It offers a set of functions that can be used to bulk import raw data and data dictionaries into MongoDB to be accessed by the API.
+
+Use
+*****************
+
+To use Famport, you run the main.py found in the /famport directory. There's a couple different options for data import.
+Options that may overwrite or delete anything stored in MongoDB require confirmation after running the option.
+
+* ``python3 main.py --help`` gives you a list of possible functional arguments.
+* ``python3 main.py --importAllDataAndDictionaries`` will import all data and data dictionaries as defined in the famport config.yml.
+* ``python3 main.py ---importDataDictionaries`` will import only data dictionaries as defined in the famport config.yml.
+
+Configuration
+*****************
+Configuration is found in the config.yml, which is commented extensively to explain what each setting does.
+
+The configuration has options for defining each data owner and their respective raw data inputs and data dictionaries, which must all be placed in the ```/famport/import_resources/``` directory.
 
 What Comes Next
 ==============================================
