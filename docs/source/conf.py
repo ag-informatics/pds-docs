@@ -25,11 +25,6 @@ exclude_patterns = []
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'bootstrap'
-html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
-html_theme_options = {
-    'nav_title': 'The Plant Data Service',
-    'bootswatch_theme': "lumen",
-    'navbar_pagenav_name': "Contents",
-}
+html_theme = 'karma_sphinx_theme'
+html_theme_options = {}
 html_static_path = ['_static']

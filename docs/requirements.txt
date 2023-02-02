@@ -1,3 +1,4 @@
 sphinx-bootstrap-theme==0.8.1
 furo==2022.12.7
 sphinx-material==0.0.35
+karma-sphinx-theme==0.0.8
