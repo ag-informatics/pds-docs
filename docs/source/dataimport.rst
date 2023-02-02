@@ -25,7 +25,6 @@ Data Dictionary Requirements
 Famport requires that the data dictionary follows a specific set of requirements. Famport only accepts data dictionaries in CSV format and it is primarily based on the data dictionary requirements listed by the USDA's Ag Data commons (more on that `here <'https://data.nal.usda.gov/data-dictionary-examples'>`_).
 
 .. list-table:: Data Dictionary Requirements for Famport
-   :widths: 25 25 50
    :header-rows: 1
 
    * - Human-Readable Name
