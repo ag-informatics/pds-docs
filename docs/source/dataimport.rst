@@ -1,7 +1,7 @@
-Importing Data: Famport
+Importing Data
 ==============================================
 
-Famport (**F**ast**A**PI **M**ongoDB Im**port**er) is a component of the data import and validation process of the Plant Data Service. It offers a set of functions that can be used to bulk import raw data and data dictionaries into MongoDB to be accessed by the API.
+Famport (**F** ast **A** PI **M** ongoDB Im **port** er) is a component of the data import and validation process of the Plant Data Service. It offers a set of functions that can be used to bulk import raw data and data dictionaries into MongoDB to be accessed by the API.
 
 Use
 *****************
