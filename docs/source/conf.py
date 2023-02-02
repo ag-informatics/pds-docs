@@ -29,6 +29,6 @@ html_theme = 'bootstrap'
 html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
 html_theme_options = {
     'nav_title': 'The Plant Data Service',
-    'bootswatch_theme': "minty",
+    'bootswatch_theme': "lumen",
 }
 html_static_path = ['_static']
