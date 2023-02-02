@@ -5,7 +5,7 @@ Architecture
 High-Level Overview
 *****************
 .. figure:: images/structure.png
-    :scale: 25%
+    :scale: 50%
     :align: center
     
     Figure: The high-level overview of the architecture of the Plant Data Service.

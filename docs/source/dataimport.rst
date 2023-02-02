@@ -41,6 +41,13 @@ Famport requires that the data dictionary follows a specific set of requirements
      - **Accepted values:** Any comma-separated strings. Only applies if the data type is "enum". Formatted in the CSV with all options encased in double quotes.
      - **Accepted values:** Any string.
      - **Accepted values:** For a field to NOT be required, this can be left empty or have "false" or "no". All other values are determined as stating that the field is required for the model.
+   * - **Purpose:** This is the human-readable name of the field. It is mainly used for logging since the machine-readable name is used for the actual model construction.
+     - **Purpose:** This is used to define the field in the model .py.
+     - **Purpose:** This provides a description for the field.
+     - **Purpose:** Used to define the data type for the field. Pydantic needs a data type for every field to keep consistency.
+     - **Purpose:** If the data is an enumeration, the enumeration options should be added here. They must be strings, as of now.
+     - **Purpose:** This tells famport what collection to use the field to define. All fields with the same "Collection" entry will be added into the same model .py when generating models. If multiple categories are defined, multiple tags will be assigned to this field within the Mongo database. The first tag or category listed in this section for each field will be the one used for model assignments when creating model files.
+     - **Purpose:** Allows for enforcing requirements on fields. **As of the last famport update, this has been temporarily deprecated as I redo how grouping works for multi-inheritance.**
 
 Raw Data Requirements
 *****************
