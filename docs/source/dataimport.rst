@@ -17,17 +17,31 @@ Configuration
 *****************
 Configuration is found in the config.yml, which is commented extensively to explain what each setting does.
 
-The configuration has options for defining each data owner and their respective raw data inputs and data dictionaries, which must all be placed in the ```/famport/import_resources/``` directory.
+The configuration has options for defining each data owner and their respective raw data inputs and data dictionaries, which must all be placed in the ``/famport/import_resources/`` directory.
 
 Data Dictionary Requirements
 *****************
 
-Famport requires that the data dictionary follows a specific set of requirements. Famport only accepts data dictionaries in CSV format and it is primarily based on the data dictionary requirements listed by the USDA's Ag Data commons (more on that [here](https://data.nal.usda.gov/data-dictionary-examples)).
+Famport requires that the data dictionary follows a specific set of requirements. Famport only accepts data dictionaries in CSV format and it is primarily based on the data dictionary requirements listed by the USDA's Ag Data commons (more on that `here <'https://data.nal.usda.gov/data-dictionary-examples'>`_).
 
-| **Human-readable Name**  | **Machine-readable name** | **Description** | **Data Type** | **Enumeration Options** | **Collection** | **Requirement**|
-| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-|**Accepted values**:  Any string. |**Accepted values**:  Any machine-readable string. Should not contain spaces or special characters. Optimally, use only numbers, characters, and underscores. |**Accepted values**:  Any string. |**Accepted values**: Must be one of the following to define data types: <ul><li>"string"</li><li>"float"</li><li>"date"</li><li>"integer"</li><li>"boolean"</li><li>"enum"</li></ul> |**Accepted values**: Any comma-separated strings. |**Accepted values**: Any string. |**Accepted values**: For a field to NOT be required, this can be left empty or have "false" or "no". _All other values are determined as stating that the field is required for the model._ |
-| **Purpose**: This is the human-readable name of the field. It is mainly used for logging since the machine-readable name is used for the actual model construction. | **Purpose**: This is used to define the field in the model .py.| **Purpose**: This provides a description for the field. | **Purpose**: Used to define the data type for the field. Pydantic needs a data type for every field to keep consistency. | **Purpose**: If the data is an enumeration, the enumeration options should be added here. They must be strings, as of now. | **Purpose**: This tells famport what collection to use the field to define. All fields with the same "Collection" entry will be added into the same model .py when generating models. If multiple categories are defined, multiple tags will be assigned to this field within the Mongo database. **The first tag or category listed in this section for each field will be the one used for model assignments when creating model files.** | **Purpose**: Allows for enforcing requirements on fields. **As of the last famport update, this has been temporarily deprecated as I redo how grouping works for multi-inheritance.** |
+.. list-table:: Data Dictionary Requirements for Famport
+   :widths: 25 25 50
+   :header-rows: 1
+
+   * - Human-Readable Name
+     - Machine-Readable Name
+     - Description
+     - Data Type
+     - Enumeration Options
+     - Collection
+     - Requirement
+   * - **Accepted values:**: Any string.
+     - **Accepted values:**: Any machine-readable string. Should not contain spaces or special characters. Optimally, use only numbers, alphabetical characters, and underscores.
+     - **Accepted values:**: Any string. 
+     - **Accepted values:**: Must be one of the following to define data types - "string", "float", "date", "integer", "boolean", "enum" 
+     - **Accepted values:** Any comma-separated strings. Only applies if the data type is "enum". Formatted in the CSV with all options encased in double quotes.
+     - **Accepted values:** Any string.
+     - **Accepted values:** For a field to NOT be required, this can be left empty or have "false" or "no". All other values are determined as stating that the field is required for the model.
 
 Raw Data Requirements
 *****************
