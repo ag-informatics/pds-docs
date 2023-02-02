@@ -38,6 +38,7 @@ Deployment on a Remote Server
     * Get the packages. Run ``apt-get update`` to update your packages list and then ``sudo apt-get install -y mongodb-org``
     * Start MongoDB using ``sudo systemctl start mongod``.
     * It's time to set up a secure login for Mongo. Access the Mongo shell by running ``mongosh``. Use the admin database by running ``use admin`` and then run the following command, replacing the placeholders. **Your password cannot contain : / ? # [ ] @**::
+      
         db.createUser(
         {
         user: "yourusername", 
@@ -45,7 +46,7 @@ Deployment on a Remote Server
         roles:["root"]
         })
      
-If the admin user has been successfully added, the shell will respond with an ok:1.
+      * If the admin user has been successfully added, the shell will respond with an ok:1.
 
 #. **Clone the GitHub repository.**
 
@@ -122,14 +123,14 @@ We settled with `MongoDB <https://mongodb.com>`_ since it is widely used (and mo
 What Comes Next
 ==============================================
 
-**Geographic Matching**
+**Geographic Matching:**
 To meet original needs, the Plant Data Service will support the matching of plant data to geographic locations. These locations will determine what data is shown and from what data owner and will support the coordinate, county, state, and region levels.
 
-**Functionality Expansion**
+**Functionality Expansion:**
 More functions will be added to the Plant Data Service. These functions will support requests for plant searches and domain-specific data (e.g. a function that supports the look up of agronomic, phenologic, or stress-related data for a plant given a geographic location).
 
-**Administrative Panel Creation**
+**Administrative Panel Creation:**
 Since previous attempts to find an adequate data administration panel have failed, scoping will be conducted to identify needs for an administration panel that allows data owners to edit, create, and delete data stored within the PDS.
 
-**Multi-Dictionary Support**
+**Multi-Dictionary Support:**
 Currently, famport only allows one data dictionary per owner. Multi-dictionary support will be necessary in the near future.
