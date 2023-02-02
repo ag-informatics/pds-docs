@@ -1,9 +1,9 @@
 Architecture
 ==============================================
 
-=================
+
 High-Level Overview
-=================
+*****************
 .. figure:: images/structure.png
     :scale: 25%
     :align: center

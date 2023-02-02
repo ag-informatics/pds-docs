@@ -3,7 +3,7 @@ Importing Data
 
 Famport (**F** ast **A** PI **M** ongoDB Im **port** er) is a component of the data import and validation process of the Plant Data Service. It offers a set of functions that can be used to bulk import raw data and data dictionaries into MongoDB to be accessed by the API.
 
-Use
+Using Famport
 *****************
 
 To use Famport, you run the main.py found in the /famport directory. There's a couple different options for data import.
@@ -34,10 +34,10 @@ Famport requires that the data dictionary follows a specific set of requirements
      - Enumeration Options
      - Collection
      - Requirement
-   * - **Accepted values:**: Any string.
-     - **Accepted values:**: Any machine-readable string. Should not contain spaces or special characters. Optimally, use only numbers, alphabetical characters, and underscores.
-     - **Accepted values:**: Any string. 
-     - **Accepted values:**: Must be one of the following to define data types - "string", "float", "date", "integer", "boolean", "enum" 
+   * - **Accepted values:** Any string.
+     - **Accepted values:** Any machine-readable string. Should not contain spaces or special characters. Optimally, use only numbers, alphabetical characters, and underscores.
+     - **Accepted values:** Any string. 
+     - **Accepted values:** Must be one of the following to define data types - "string", "float", "date", "integer", "boolean", "enum" 
      - **Accepted values:** Any comma-separated strings. Only applies if the data type is "enum". Formatted in the CSV with all options encased in double quotes.
      - **Accepted values:** Any string.
      - **Accepted values:** For a field to NOT be required, this can be left empty or have "false" or "no". All other values are determined as stating that the field is required for the model.

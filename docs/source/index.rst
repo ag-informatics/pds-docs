@@ -18,7 +18,7 @@ You can demo the PDS `here <http://142.93.60.97/>`_ .
 **Table Of Contents:** 
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    deployment
    architecture
