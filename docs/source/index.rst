@@ -8,6 +8,8 @@ Welcome!
 **Welcome to the Plant Data Service Documentation!**
 
 .. image:: images/tree.png
+   :width: 150
+   :align: right
 
 The Plant Data Service is an open-source plant data API. It was inspired by the growing need for information sharing within agriculture and was created to meet the needs of the National Cover Crop Councils.
 
