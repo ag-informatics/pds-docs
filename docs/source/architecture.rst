@@ -20,8 +20,9 @@ It was determined earlier on in the development and design process that NoSQL wa
 
 Essentially, SQL Database Management Systems are based on a schema that *must* be adhered to. Our NoSQL DBMS, MongoDB, simply stores a collection of JSON documents within "collections" (analogous to separate databases within the same SQL server). These documents all have unique IDs and do not have to follow any specific defined schema. 
 
-*****************
+
 Why we chose MongoDB as our Database Management System (DBMS)
-=================
-A couple DBMSs were considered during the early phases of development. One promising DBMS was [OrientDB](https://orientdb.org/), but Orient proved to be outdated for current versions of its Python tool and its related dependencies.
-We settled with [MongoDB](https://www.mongodb.com/) since it is widely used (and more reliable than Orient). As a NoSQL DBMS, MongoDB stores collections of "documents" with non-rigid schemas. The flexibility of data storage allows data to be linked together.
+-----------------
+
+A couple DBMSs were considered during the early phases of development. One promising DBMS was `OrientDB <https://orientdb.org>`_ , but Orient proved to be outdated for current versions of its Python tool and its related dependencies.
+We settled with `MongoDB <https://mongodb.com>`_ since it is widely used (and more reliable than Orient). As a NoSQL DBMS, MongoDB stores collections of "documents" with non-rigid schemas. The flexibility of data storage allows data to be linked together.
