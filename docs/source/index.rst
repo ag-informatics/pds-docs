@@ -13,10 +13,10 @@ About
 
 The Plant Data Service is an open-source plant data API. It was inspired by the growing need for information sharing within agriculture and was created to meet the needs of the National Cover Crop Councils.
 
+You can demo the PDS `here <http://142.93.60.97/>`_ .
+
 .. note::
    This project is under active development.
-
-You can demo the PDS `here <http://142.93.60.97/>`_ .
 
 Deployment Instructions
 ==============================================
@@ -82,10 +82,26 @@ High-Level Architecture
     :scale: 50%
     
     Figure: The high-level overview of the architecture of the Plant Data Service.
+   
+The API
+*****************
+
+The PDS API application itself uses `FastAPI <'https://fastapi.tiangolo.com'>`_ FastAPI is a web framework used for creating REST API applications and, despite its newness, has gained popularity due to its asynchronous support and its ease of use. It was selected as the API framework over Django and Flask.
+While Django has more built-in features than FastAPI, Django is not suited for NoSQL databases or linked data structures.
+Flask is suited for basically however you want to organize your data, but generally takes longer to develop basic functionalities and it lacks a lot of things "out of the box".
+
+Modules and tools included with FastAPI
+The FastAPI has a toolbox of different modules and standards that you can use together for a robust application. Some of these important features include:
+* `SwaggerUI <'https://swagger.io/tools/swagger-ui/'>`_: SwaggerUI is used to create beautiful and highly functional documentation of functions and defined object schemas automatically. 
+* `Pydantic <'https://docs.pydantic.dev/'>`_: Pydantic is used for object relational mapping and data validation. It can be used to create schemas that define objects used in API responses and can be used in conjunction with SwaggerUI for extremely in-detail auto documentation.
+* `OpenAPI <'https://www.openapis.org'>`_: OpenAPI is a set of standards used for easy interfacing with RESTful APIs. It used to be a part of Swagger before becoming its own project.
+
+The webserver used for the API application
+-----------------
+The API runs on `Uvicorn <'https://uvicorn.org'>`_. Uvicorn is an ASGI (Asynchronous Server Gateway Interface) server for Python applications. Uvicorn allows for quick, asynchronous handling of requests. Generally speaking, Uvicorn is the recommended webserver for FastAPI applications.
 
 Data Structuring and Database Management System Selection
 *****************
-
 
 Why we chose to use a NoSQL database
 -----------------
@@ -104,6 +120,25 @@ Why we chose MongoDB as our Database Management System (DBMS)
 A couple DBMSs were considered during the early phases of development. One promising DBMS was `OrientDB <https://orientdb.org>`_ , but Orient proved to be outdated for current versions of its Python tool and its related dependencies.
 We settled with `MongoDB <https://mongodb.com>`_ since it is widely used (and more reliable than Orient). As a NoSQL DBMS, MongoDB stores collections of "documents" with non-rigid schemas. The flexibility of data storage allows data to be linked together.
 
+What Comes Next
+==============================================
 
+Geographic Matching
+*****************
 
- 
+To meet original needs, the Plant Data Service will support the matching of plant data to geographic locations. These locations will determine what data is shown and from what data owner and will support the coordinate, county, state, and region levels.
+
+Functionality Expansion
+*****************
+
+More functions will be added to the Plant Data Service. These functions will support requests for plant searches and domain-specific data (e.g. a function that supports the look up of agronomic, phenologic, or stress-related data for a plant given a geographic location).
+
+Administrative Panel Creation
+*****************
+
+Since previous attempts to find an adequate data administration panel have failed, scoping will be conducted to identify needs for an administration panel that allows data owners to edit, create, and delete data stored within the PDS.
+
+Multi-Dictionary Support
+*****************
+
+Currently, famport only allows one data dictionary per owner. Multi-dictionary support will be necessary in the near future.
