@@ -47,3 +47,38 @@ Why we chose MongoDB as our Database Management System (DBMS)
 
 A couple DBMSs were considered during the early phases of development. One promising DBMS was `OrientDB <https://orientdb.org>`_ , but Orient proved to be outdated for current versions of its Python tool and its related dependencies.
 We settled with `MongoDB <https://mongodb.com>`_ since it is widely used (and more reliable than Orient). As a NoSQL DBMS, MongoDB stores collections of "documents" with non-rigid schemas. The flexibility of data storage allows data to be linked together.
+
+How MongoDB Collections Are Stored And Linked Together
+-----------------
+The PDS stores data in MongoDB collections. Collections are analogous to the "databases" created in SQL DBMSs since they are individual and independent of each other.
+
+However, some data is pseudo-linked together in the PDS's code. This allows changes to a data dictionary or plant entry to be immediately implemented in API responses without changing data structure.
+For example, a (simplified) data dictionary entry in the dictionary collection may look like: ::
+
+[
+  "owner_id": 0,
+  "fields": [
+    {
+      "field_id": 1,
+      "humanReadableName": "Plant Name",
+      "machineReadableName": "plant_name",
+      "dataType": "string",
+      "description": "The name of the plant.",
+      "required": true,
+      "tags": [ ],
+      "version": 0,
+      "lastUpdated": {
+        "$date": {
+          "$numberLong": "1675434889984"
+        }
+      }
+    }
+  ]
+]
+
+Note the ``field_id``. 
+
+When storing plant data, the Plant Data Service refers to this field ID. This means that when something is changed in the data dictionary, this change applies to the response.
+Consider:
+
+
