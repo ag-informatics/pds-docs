@@ -53,32 +53,39 @@ How MongoDB Collections Are Stored And Linked Together
 The PDS stores data in MongoDB collections. Collections are analogous to the "databases" created in SQL DBMSs since they are individual and independent of each other.
 
 However, some data is pseudo-linked together in the PDS's code. This allows changes to a data dictionary or plant entry to be immediately implemented in API responses without changing data structure.
-For example, a (simplified) data dictionary entry in the dictionary collection may look like: ::
+For example, a (simplified) data dictionary entry in the dictionary collection may look like::
 
-[
-  "owner_id": 0,
-  "fields": [
-    {
-      "field_id": 1,
-      "humanReadableName": "Plant Name",
-      "machineReadableName": "plant_name",
-      "dataType": "string",
-      "description": "The name of the plant.",
-      "required": true,
-      "tags": [ ],
-      "version": 0,
-      "lastUpdated": {
-        "$date": {
-          "$numberLong": "1675434889984"
+    [
+    "owner_id": 0,
+    "fields": [
+        {
+        "field_id": 1,
+        "humanReadableName": "Plant Name",
+        "machineReadableName": "plant_name",
+        "dataType": "string",
+        "description": "The name of the plant.",
+        "required": true,
+        "tags": [ ],
+        "version": 0,
+        "lastUpdated": {
+            "$date": {
+            "$numberLong": "1675434889984"
+            }
         }
-      }
-    }
-  ]
-]
+        }
+    ]
+    ]
 
 Note the ``field_id``. 
 
-When storing plant data, the Plant Data Service refers to this field ID. This means that when something is changed in the data dictionary, this change applies to the response.
-Consider:
+When storing plant data, the Plant Data Service refers to this field ID. This means that when something (such as the description) is changed in the data dictionary, this change applies to the response. The updated description of the field would be pulled from the dictionary next time a response is given from the API.
+
+There are a number of collections within the Plant Data Service:
+
+    #. ``data_dictionaries``: A collection of documents that describe the different data dictionaries used by the Plant Data Service and its data owners. 
+    #. ``plant_library``: A collection of plant documents. Each document has a plant object that stores the plant's ID, common name, scientific name, and associated synonyms. These collections are created upon data import and are matched across different zones. A new entry is created during data import if an entry does not already exist for that combination of a plant's common, scientific, and synonym names.
+    #. ``plant_data``: This collection hosts a variety of documents that include the bulk of plant data. The plant data is stored with a field ID and a value. The documents are unique per plant, per USDA hardiness zone.
+    
+
 
 
