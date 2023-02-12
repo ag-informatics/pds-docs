@@ -8,6 +8,7 @@ Retrieves all data dictionaries used within the PDS and their respective data ow
 **Arguments**: *None*
 
 **Response**::
+
     {
     "dictionaries": [
         {
@@ -38,7 +39,9 @@ Retrieves all data dictionaries used within the PDS and their respective data ow
 Retrieving All Data By Plant
 *****************
 Retrieves all data associated with a plant.
+
 **Arguments**: Plant ID (int)
+
 **Response**::
 
     {
@@ -56,7 +59,9 @@ Retrieves all data associated with a plant.
 Retrieving Cover Crop Data By Plant
 *****************
 Retrieves all cover cropping-related data associated with a plant, including cover crop goals. 
+
 **Arguments**: Plant ID (int)
+
 **Response**::
 
     {
