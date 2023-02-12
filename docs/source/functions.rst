@@ -4,9 +4,10 @@ API Functions
 Retrieving Data Dictionaries
 *****************
 Retrieves all data dictionaries used within the PDS and their respective data owners.
-**Arguments**: *None*
-**Response**: ::
 
+**Arguments**: *None*
+
+**Response**::
 {
   "dictionaries": [
     {
@@ -38,7 +39,7 @@ Retrieving All Data By Plant
 *****************
 Retrieves all data associated with a plant.
 **Arguments**: Plant ID (int)
-**Response**: ::
+**Response**::
 
 {
   "plants": [
@@ -56,7 +57,7 @@ Retrieving Cover Crop Data By Plant
 *****************
 Retrieves all cover cropping-related data associated with a plant, including cover crop goals. 
 **Arguments**: Plant ID (int)
-**Response**: ::
+**Response**::
 
 {
   "plants": [
