@@ -24,3 +24,4 @@ You can demo the PDS `here <http://142.93.60.97/>`_ .
    architecture
    dataimport
    whatcomesnext
+   functions
